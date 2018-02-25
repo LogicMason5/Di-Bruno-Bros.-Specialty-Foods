@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
+var fs = require('fs');
 
 
 const app = express();
@@ -30,9 +31,17 @@ app.get('/hello', function(req, res){
 
 app.get('/', function(req, res){
 	var title = "Bappa App"
-	res.render('index', {
-		title: title
+	var song = ""
+	fs.readFile('./resources/sukhakarta.txt', 'utf8', function(err, data) {
+	    if (err) throw err;
+	    song = data;
+
+	    res.render('index', {
+			title: title,
+			song: song
+		});
 	});
+
 });
 
 
