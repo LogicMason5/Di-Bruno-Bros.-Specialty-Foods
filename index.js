@@ -24,10 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //routes
 app.use('/api', api_route)
 
-// testing server
-app.get('/hello', function(req, res){
-	res.send('<h1> Hello there, I am working! </h1>');
-});
+
 
 app.get('/', function(req, res){
 	var title = "Bappa App"
