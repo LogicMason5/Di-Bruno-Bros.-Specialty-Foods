@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from  '../../services/data.service';
 import { Router,  ActivatedRoute, ParamMap } from '@angular/router';
+import { SongListComponent } from './components/song-list/song-list.component';
 
 
 import 'rxjs/add/operator/switchMap';
@@ -13,7 +14,7 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./player.component.css']
 })
 export class PlayerComponent implements OnInit {
-  song: Song;
+  song: any;
   constructor(private dataService: DataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -29,12 +30,8 @@ export class PlayerComponent implements OnInit {
         // error handling
         console.log("Failed to load menu list");
       }
-    })
+    });
 
   }
-
-}
-
-interface Song{
 
 }
