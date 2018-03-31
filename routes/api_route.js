@@ -5,24 +5,45 @@ const util = require('util');
 
 
 const app = express();
-
-var aarti_list = [
-	{"id": 0, "title": "Sukhakarta Dukhaharta", "text": "sukhakarta.txt", "audio": "aarti/1-sukhakarta-dukhaharta.mp3", "type": "aarti"},
-	{"id": 1, "title": "Lavthavti Vikrala", "text": "lavthavti_vikrala.txt", "audio": "aarti/2-lavthavti-vikrala.mp3"}
+var menu =[
+	{"id":0, "title": "Aarti"},
+	{"id":1, "title": "Gajar"},
+	{"id":2, "title": "Sholk"}
 ]
+var aarti_list = [
+	{"id": 0, "title": "Sukhakarta Dukhaharta", "text": "sukhakarta.txt", "audio": "aarti/1-sukhakarta-dukhaharta.mp3", "catergory_id": 0},
+	{"id": 1, "title": "Lavthavti Vikrala", "text": "lavthavti_vikrala.txt", "audio": "aarti/2-lavthavti-vikrala.mp3", "catergory_id": 0}
+];
+var shlok_list = [
+	{"id": 0, "title": "Sukhakarta Dukhaharta", "text": "sukhakarta.txt", "audio": "aarti/1-sukhakarta-dukhaharta.mp3", "catergory_id": 2},
+	{"id": 1, "title": "Lavthavti Vikrala", "text": "lavthavti_vikrala.txt", "audio": "aarti/2-lavthavti-vikrala.mp3", "catergory_id": 2}
+];
+
+var menuList = [aarti_list, shlok_list];
+
 
 var aarti_hashMap = new Map();
 for(var i=0; i<aarti_list.length; i++){
 	aarti_hashMap.set(aarti_list[i].id, aarti_list[i])
 }
 
+
+
+
+
+
+// list of menu
+router.get('/menu/list', (req, res) => {
+	res.json(menu);
+});
+
 // list of aartis
-router.get('/aarti/list', (req, res) => {
-	res.json(aarti_list);
+router.get('/menu/list/:id', (req, res) => {
+	res.json(menuList[parseInt(req.params.id)]);
 });
 
 // aarti
-router.get('/aarti/:id', (req, res) => {
+router.get('/song/aarti/:id', (req, res) => {
 	//res.json(aarti_hashMap.get(parseInt(req.params.id)));
 	var song = ""
 	fs.readFile("./resources/text/"+aarti_hashMap.get(parseInt(req.params.id)).text, 'utf8', function(err, data) {

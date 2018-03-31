@@ -1,0 +1,7 @@
+<ul class="demo-list-item mdl-list">
+  <li class="mdl-list__item" *ngFor="let item of songList" (click)="navigateToPlayer(item)">
+    <span class="mdl-list__item-primary-content">
+      {{ item.title }}
+    </span>
+  </li>
+</ul>
