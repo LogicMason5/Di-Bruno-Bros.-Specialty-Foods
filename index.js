@@ -10,6 +10,7 @@ const app = express();
 const api_route = require('./routes/api_route.js');
 
 // View Engine
+app.set('port', (process.env.PORT || 5000))
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
@@ -39,6 +40,6 @@ app.get('/', function(req, res){
 
 
 
-app.listen(3000, function(){
-	console.log('Server running on port 3000...');
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'))
 })
