@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DataService } from  '../../services/data.service';
 import { Router } from '@angular/router';
 import { SongListComponent } from './components/song-list/song-list.component';
@@ -9,7 +9,10 @@ import { SongListComponent } from './components/song-list/song-list.component';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  menuList[]: MenuItem;
+  menuList: [MenuItem];
+  pageTitle: string;
+  selectedList: string;
+  @Output() activate: EventEmitter<any> = new EventEmitter();
 
   constructor(private dataService:DataService, private router:Router) { }
 
@@ -18,7 +21,9 @@ export class DashboardComponent implements OnInit {
     this.dataService.getMenuList().subscribe(data => {
       if (data){
         this.menuList = data;
-        console.log(this.menuList);
+        console.log(this.menuList );
+        this.pageTitle = "Bappa Music";
+        this.activate.emit(null);
       }
       else{
         // error handling
@@ -29,7 +34,7 @@ export class DashboardComponent implements OnInit {
 
   navigateToSubList(item:MenuItem){
     console.log(item);
-     this.router.navigate(['songlist', {item_id: item.id}]);
+    this.router.navigate(['songlist', {item_id: item.id, cat:item.title}]);
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DataService } from  '../../services/data.service';
 import { Router,  ActivatedRoute, ParamMap } from '@angular/router';
 import { PlayerComponent } from './components/player/player.component';
@@ -13,7 +13,9 @@ import { Observable } from 'rxjs/Observable';
 })
 export class SongListComponent implements OnInit {
    private selectedId: number;
-   private songList[]: MenuItem;
+   private songList: [MenuItem];
+   private pageTitle: string;
+   @Output() activate: EventEmitter<any> = new EventEmitter();
 
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }
 
@@ -26,6 +28,8 @@ export class SongListComponent implements OnInit {
       if (data){
         this.songList = data;
         console.log(this.songList);
+        this.pageTitle = params.cat;
+        this.activate.emit(null);
       }
       else{
         // error handling
@@ -38,7 +42,7 @@ export class SongListComponent implements OnInit {
   navigateToPlayer(item: MenuItem){
     console.log(item);
     this.router.navigate(['player', {song_id: item.id}]);
-  } 
+  }
 
 }
 

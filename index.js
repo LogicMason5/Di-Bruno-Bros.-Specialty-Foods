@@ -33,17 +33,7 @@ app.use('/api', api_route)
 
 
 app.get('/', function(req, res){
-	var title = "Bappa App"
-	var song = ""
-	fs.readFile('./resources/sukhakarta.txt', 'utf8', function(err, data) {
-	    if (err) throw err;
-	    song = data;
-
-	    res.render('index', {
-			title: title,
-			song: song
-		});
-	});
+	res.json({status: "Running"});
 
 });
 
