@@ -20,27 +20,36 @@ export class DataService {
   getMenuList(){
     let headers = new Headers();
     let options = new RequestOptions({headers:headers});
-    return this.http.get( 'http://localhost:3000/api/menu/list', options)
+    //return this.http.get( 'http://localhost:3000/api/menu/list', options)
+    return this.http.get( 'https://bappamusic.herokuapp.com/api/menu/list', options)
     .map(res => res.json());
   }
 
   getCategoryList(id){
     let headers = new Headers();
     let options = new RequestOptions({headers:headers});
-    return this.http.get( 'http://localhost:3000/api/menu/list/'+id, options)
+    //return this.http.get( 'http://localhost:3000/api/menu/list/'+id, options)
+    return this.http.get( 'https://bappamusic.herokuapp.com/api/menu/list/'+id, options)
     .map(res => res.json());
   }
 
   getSong(id){
     let headers = new Headers();
     let options = new RequestOptions({headers:headers});
-    return this.http.get( 'http://localhost:3000/api/song/'+id, options)
+    return this.http.get( 'http://localhost:5000/api/song/'+id, options)
+    //return this.http.get( 'https://bappamusic.herokuapp.com/api/song/'+id, options)
     .map(res => res.json());
   }
 
   setPageTitle(title:string){
     this.pageTitle = title;
     console.log("Service Set title: "+this.pageTitle);
+  }
+
+  getAudio(id){
+    let headers = new Headers();
+    let options = new RequestOptions({headers:headers});
+    return this.http.get( 'http://localhost:5000/api/aarti/'+id+'/audio', options);
   }
 
 }

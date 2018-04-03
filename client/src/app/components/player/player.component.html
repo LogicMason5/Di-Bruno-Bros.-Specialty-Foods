@@ -1,1 +1,5 @@
 <pre class="poem-text lyrics" *ngIf = "song">{{song.lyrics}}</pre>
+<audio controls>
+  <source *ngIf = "audio" [src]="audio" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>

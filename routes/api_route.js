@@ -53,12 +53,13 @@ router.get('/song/:id', (req, res) => {
 	fs.readFile("./resources/text/"+aarti_hashMap.get(parseInt(req.params.id)).text, 'utf8', function(err, data) {
 	    if (err) throw err;
 	    song = data;
-
+			var songData =  aarti_hashMap.get(parseInt(req.params.id));
 	    res.json({
-				id: aarti_hashMap.get(parseInt(req.params.id)).id,
-				title: aarti_hashMap.get(parseInt(req.params.id)).title,
-				catergory_id: aarti_hashMap.get(parseInt(req.params.id)).catergory_id,
-				lyrics: song
+				id: songData.id,
+				title: songData.title,
+				catergory_id: songData.catergory_id,
+				lyrics: song,
+				audio: songData.audio
 		});
 	});
 

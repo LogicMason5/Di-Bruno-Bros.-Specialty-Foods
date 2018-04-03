@@ -4,12 +4,12 @@
   "description": "Audio station for ganpati bappa aarti",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "engines": {
     "node": "6.10.2"
   },
-  "start": "node index.js",
   "author": "Aditya Mhamunkar",
   "license": "ISC",
   "dependencies": {
