@@ -1,5 +1,15 @@
 <pre class="poem-text lyrics" *ngIf = "song">{{song.lyrics}}</pre>
-<audio controls>
-  <source *ngIf = "audio" [src]="audio" type="audio/mpeg">
-Your browser does not support the audio element.
+<audio  (timeupdate)="setSeek()" id="myAudio">
+  <source *ngIf = "audio"  [src]="audio" type="audio/mpeg">
+  Your browser does not support the audio element.
 </audio>
+
+<input id="seek" (change)="onSeek()"  class="mdl-slider mdl-js-slider" type="range"
+  min="0" max="100" value="{{seekVal}}" tabindex="{{seekVal}}">
+
+
+
+<button type="button" (click)="play()" name="button">Play</button>
+<button type="button" (click)="pause()" name="button">Pause</button>
+
+<button type="button" (click)="mute()" name="button">Mute</button>
