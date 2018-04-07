@@ -6,3 +6,5 @@ A full stack web application with custom audio player
 - NodeJS
 - Express 
 - AngularJS
+- Heroku
+
