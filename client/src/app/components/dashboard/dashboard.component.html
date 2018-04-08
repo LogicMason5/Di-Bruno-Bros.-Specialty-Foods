@@ -1,3 +1,7 @@
+<div *ngIf = "!menuList" style="text-align:center">
+  <div class="mdl-spinner mdl-js-spinner is-active" style="text-align:center; margin: 50px 0;"></div>
+</div>
+
  <ul class="demo-list-item mdl-list">
    <li class="mdl-list__item" *ngFor="let item of menuList" (click)="navigateToSubList(item)">
      <span class="mdl-list__item-primary-content">

@@ -12,9 +12,11 @@ import { DataService } from  './services/data.service';
 import { SongListComponent } from './components/song-list/song-list.component';
 import { PlayerComponent } from './components/player/player.component';
 import { HeaderComponent } from './components/header/header.component';
+import { IntroComponent } from './components/intro/intro.component';
 
 const appRoutes: Routes = [
-  {path: '', component:DashboardComponent},
+  {path: '', component:IntroComponent},
+  {path: 'dashboard', component:DashboardComponent},
   {path: 'songlist', component:SongListComponent},
   {path: 'player', component:PlayerComponent},
   {path: 'player1', component:HeaderComponent}
@@ -27,7 +29,8 @@ const appRoutes: Routes = [
     DashboardComponent,
     SongListComponent,
     PlayerComponent,
-    HeaderComponent
+    HeaderComponent,
+    IntroComponent
   ],
   imports: [
     BrowserModule,

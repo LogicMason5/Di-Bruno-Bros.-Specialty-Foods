@@ -7,13 +7,12 @@
       <div class="mdl-layout-spacer"></div>
     </div>
   </header>
-  <div class="mdl-layout__drawer">
+  <div class="mdl-layout__drawer" id="drawer">
     <span class="mdl-layout-title">Bappa Music</span>
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
+      <a (click)="hideDrawer()" class="mdl-navigation__link">Home</a>
+      <a (click)="hideDrawer()" class="mdl-navigation__link" href="#">Mangalashtak</a>
+      <a (click)="hideDrawer()" class="mdl-navigation__link" href="#">About Us</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
