@@ -23,8 +23,11 @@ export class PlayerComponent implements OnInit {
   curAudio: any;
   seekVal: any = 0;
   duration: any;
+  totalTime: string;
   seekbar: any;
+  curTime: string;
   isplaying: boolean = false;
+
   @Output() open: EventEmitter<any> = new EventEmitter();
   @Output() activate: EventEmitter<any> = new EventEmitter();
 
@@ -51,6 +54,11 @@ export class PlayerComponent implements OnInit {
         this.activate.emit(this.song.title);
 
 
+        setTimeout(()=>{
+          this.curTime = "0:00";
+          this.totalTime = "0:00";
+        },100);
+
       }
       else{
         // error handling
@@ -62,12 +70,14 @@ export class PlayerComponent implements OnInit {
   ngAfterViewInit(){
     this.curAudio = document.getElementById('myAudio');
     this.curAudio.voulume = 1.0;
-    this.duration = this.curAudio.duration;
+    if (this.curAudio.duration){
+        this.totalTime = this.formatTime(this.curAudio.duration);
+    }
+
     componentHandler.upgradeElement(this.seekbar);
 
-
-
   }
+
 
   setCurrentTime(timeIn){
     this.curAudio.currentTime = parseInt(timeIn);
@@ -84,14 +94,23 @@ export class PlayerComponent implements OnInit {
   }
 
   setSeek(){
+    // updating current time
+    this.curTime = this.formatTime(this.curAudio.currentTime);
+    // updating seek value
     this.seekVal = (this.curAudio.currentTime/this.curAudio.duration)*100;
     this.seekbar.MaterialSlider.change(this.seekVal);
-
-
   }
 
+  formatTime(timeIn){
+    var timeNow = timeIn;
+    var minutes = Math.floor(timeIn / 60);
+    var sec = (parseInt(timeIn - (minutes*60))).toString();
+    var seconds = sec/10 < 1 ? ("0"+sec) : (""+sec);
+    return (minutes + ":" + seconds);
+  }
 
   play(){
+    this.totalTime = this.formatTime(this.curAudio.duration);
     var element = document.getElementById('playPauseBtn');
     if (this.isplaying){
       this.curAudio.pause();

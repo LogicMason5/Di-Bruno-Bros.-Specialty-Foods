@@ -1,5 +1,5 @@
 <pre class="poem-text lyrics" *ngIf = "song">{{song.lyrics}}</pre>
-<audio  (timeupdate)="setSeek()" id="myAudio">
+<audio  (timeupdate)="setSeek()" id="myAudio" preload="metadata">
   <source *ngIf = "audio"  [src]="audio" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
@@ -9,6 +9,10 @@
 <div class="musicPlayer">
   <input id="seek" (change)="onSeek()"  class="mdl-slider mdl-js-slider seekbar_container" type="range"
     min="0" max="100" value="{{seekVal}}" tabindex="{{seekVal}}">
+
+  <span class="timeHoler">
+    <span id="curTime">{{curTime}}</span>/<span id="totalTime">{{totalTime}}</span>
+  </span>
 
   <button (click)="play()" id="playPauseBtn" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored">
     <i class="material-icons">play_arrow</i>
