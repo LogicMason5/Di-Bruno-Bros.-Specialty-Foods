@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { DataService } from  '../../services/data.service';
 import { Router,  ActivatedRoute, ParamMap } from '@angular/router';
-import { SongListComponent } from './components/song-list/song-list.component';
-import { HeaderComponent } from './components/header/header.component';
+import { SongListComponent } from '../song-list/song-list.component';
+import { HeaderComponent } from '../header/header.component';
 
 
 import 'rxjs/add/operator/switchMap';
@@ -24,6 +24,7 @@ export class PlayerComponent implements OnInit {
   seekVal: any = 0;
   duration: any;
   seekbar: any;
+  isplaying: boolean = false;
   @Output() open: EventEmitter<any> = new EventEmitter();
   @Output() activate: EventEmitter<any> = new EventEmitter();
 
@@ -32,10 +33,9 @@ export class PlayerComponent implements OnInit {
 
   ngOnInit() {
 
-
     let params: any = this.route.snapshot.params;
+    this.seekbar = (<HTMLInputElement>document.getElementById('seek'));
 
-    this.seekbar = document.getElementById('seek');
 
 
     this.dataService.getSong(params.song_id).subscribe(data => {
@@ -63,6 +63,7 @@ export class PlayerComponent implements OnInit {
     this.curAudio = document.getElementById('myAudio');
     this.curAudio.voulume = 1.0;
     this.duration = this.curAudio.duration;
+    componentHandler.upgradeElement(this.seekbar);
 
 
 
@@ -78,7 +79,7 @@ export class PlayerComponent implements OnInit {
   }
 
   onSeek(){
-    this.seekVal = document.getElementById('seek').value;
+    this.seekVal = this.seekbar.value;
     this.setCurrentTime((this.seekVal*this.curAudio.duration)/100);
   }
 
@@ -91,13 +92,31 @@ export class PlayerComponent implements OnInit {
 
 
   play(){
-    this.curAudio.play();
+    var element = document.getElementById('playPauseBtn');
+    if (this.isplaying){
+      this.curAudio.pause();
+      this.isplaying = false;
+      element.innerHTML = '<i class="material-icons">play_arrow</i>';
+    }
+    else{
+      this.curAudio.play();
+      this.isplaying = true;
+      element.innerHTML = '<i class="material-icons">pause</i>';
+    }
+
   }
   pause(){
     this.curAudio.pause();
   }
   mute(){
-    this.curAudio.muted = !this.curAudio.muted;
+    var curVal = this.curAudio.muted;
+    if (curVal){
+      document.getElementById('voliconbtn').classList.remove("mdl-button--colored");
+    }
+    else{
+      document.getElementById('voliconbtn').classList.add("mdl-button--colored");
+    }
+    this.curAudio.muted = !curVal;
   }
 
 }

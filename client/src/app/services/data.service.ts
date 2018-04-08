@@ -14,7 +14,7 @@ export class DataService {
     console.log('Data Service Connected');
   }
 
-  getPageTitle(): Observable<any[]> {
+  getPageTitle(): Observable<string> {
     return this.pageTitle;
   }
   getMenuList(){
@@ -42,7 +42,7 @@ export class DataService {
   }
 
   setPageTitle(title:string){
-    this.pageTitle = title;
+    this.pageTitle = Observable.of(title);
     console.log("Service Set title: "+this.pageTitle);
   }
 

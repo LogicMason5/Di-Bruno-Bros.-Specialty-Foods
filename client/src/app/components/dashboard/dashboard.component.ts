@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DataService } from  '../../services/data.service';
 import { Router } from '@angular/router';
-import { SongListComponent } from './components/song-list/song-list.component';
 
 @Component({
   selector: 'app-dashboard',

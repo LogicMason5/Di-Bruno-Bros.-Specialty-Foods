@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DataService } from  '../../services/data.service';
 import { Router,  ActivatedRoute, ParamMap } from '@angular/router';
-import { PlayerComponent } from './components/player/player.component';
+import { PlayerComponent } from '../player/player.component';
 
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';

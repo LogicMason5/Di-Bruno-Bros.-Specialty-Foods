@@ -4,12 +4,18 @@
   Your browser does not support the audio element.
 </audio>
 
-<input id="seek" (change)="onSeek()"  class="mdl-slider mdl-js-slider" type="range"
-  min="0" max="100" value="{{seekVal}}" tabindex="{{seekVal}}">
 
 
+<div class="musicPlayer">
+  <input id="seek" (change)="onSeek()"  class="mdl-slider mdl-js-slider seekbar_container" type="range"
+    min="0" max="100" value="{{seekVal}}" tabindex="{{seekVal}}">
 
-<button type="button" (click)="play()" name="button">Play</button>
-<button type="button" (click)="pause()" name="button">Pause</button>
+  <button (click)="play()" id="playPauseBtn" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored">
+    <i class="material-icons">play_arrow</i>
+  </button>
 
-<button type="button" (click)="mute()" name="button">Mute</button>
+  <!-- <button id="voliconbtn" (click)="mute()" class="mdl-button mdl-js-button mdl-button--icon ">
+    <i id="volicon" class="material-icons">volume_off</i>
+  </button> -->
+
+</div>

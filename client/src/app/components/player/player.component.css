@@ -1,4 +1,14 @@
 .lyrics{
   font-size: 1.7em;
-  padding: 0 15px;
+  padding: 0 15px 55px;
+}
+.musicPlayer{
+  bottom: 0;
+  position: fixed;
+  background-color: #f0f0f0;
+  width: 100%;
+  height: 55px;
+  text-align: center;
+  padding: 0 0 10px 0;
+  border-top: 1px solid #efefef;
 }
