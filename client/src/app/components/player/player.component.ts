@@ -7,7 +7,7 @@ import { HeaderComponent } from '../header/header.component';
 
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
-
+declare var componentHandler: any;
 
 @Component({
   selector: 'app-player',
@@ -73,8 +73,8 @@ export class PlayerComponent implements OnInit {
     if (this.curAudio.duration){
         this.totalTime = this.formatTime(this.curAudio.duration);
     }
-
     componentHandler.upgradeElement(this.seekbar);
+
 
   }
 
@@ -102,10 +102,9 @@ export class PlayerComponent implements OnInit {
   }
 
   formatTime(timeIn){
-    var timeNow = timeIn;
-    var minutes = Math.floor(timeIn / 60);
-    var sec = (parseInt(timeIn - (minutes*60))).toString();
-    var seconds = sec/10 < 1 ? ("0"+sec) : (""+sec);
+    var minutes:number = Math.floor(timeIn / 60);
+    var sec:any = ((timeIn).toFixed(0) - (minutes*60));
+    var seconds:any = sec/10 < 1 ? ("0"+(sec).toString()) : (""+(sec).toString());
     return (minutes + ":" + seconds);
   }
 
