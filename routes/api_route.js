@@ -41,12 +41,9 @@ var aarti_list = [
 	{"id": 27, "title": "Dhupadipa Jhala Aata", "text": "dhupadipa-jhala-aata.txt", "audio": "aarti/28-dhupadipa-jhala-aata.mp3", "catergory_id": 0},
 	{"id": 28, "title": "Shevat Goad Kari", "text": "shevat-god-kari.txt", "audio": "aarti/29-shevat-god-kari.mp3", "catergory_id": 0},
 	{"id": 29, "title": "Ghalin Lotangan", "text": "ghalin-lotangan.txt", "audio": "aarti/30-ghalin-lotangan.mp3", "catergory_id": 0},
-	{"id": 101, "title": "Ashthavinayak", "text": "ashthavinayak.txt", "audio": "gajar/1-ashthavinayak.mp3", "catergory_id": 1},
-	{"id": 201, "title": "Moraya Moraya", "text": "sukhakarta.txt", "audio": "aarti/1-sukhakarta-dukhaharta.mp3", "catergory_id": 2},
-	{"id": 201, "title": "Devadi deva", "text": "lavthavti_vikrala.txt", "audio": "aarti/2-lavthavti-vikrala.mp3", "catergory_id": 2},
-
-
-
+	{"id": 30, "title": "Ashthavinayak", "text": "ashthavinayak.txt", "audio": "gajar/1-ashthavinayak.mp3", "catergory_id": 1},
+	{"id": 31, "title": "Moraya Moraya", "text": "sukhakarta.txt", "audio": "aarti/1-sukhakarta-dukhaharta.mp3", "catergory_id": 2},
+	{"id": 32, "title": "Devadi deva", "text": "lavthavti_vikrala.txt", "audio": "aarti/2-lavthavti-vikrala.mp3", "catergory_id": 2}
 ];
 
 
