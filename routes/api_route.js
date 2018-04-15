@@ -13,10 +13,40 @@ var menu =[
 var aarti_list = [
 	{"id": 0, "title": "Sukhakarta Dukhaharta", "text": "sukhakarta.txt", "audio": "aarti/1-sukhakarta-dukhaharta.mp3", "catergory_id": 0},
 	{"id": 1, "title": "Lavthavti Vikrala", "text": "lavthavti_vikrala.txt", "audio": "aarti/2-lavthavti-vikrala.mp3", "catergory_id": 0},
-	{"id": 2, "title": "Ashthavinayak", "text": "ashthavinayak.txt", "audio": "gajar/1-ashthavinayak.mp3", "catergory_id": 1},
-	{"id": 3, "title": "Moraya Moraya", "text": "sukhakarta.txt", "audio": "aarti/1-sukhakarta-dukhaharta.mp3", "catergory_id": 2},
-	{"id": 4, "title": "Devadi deva", "text": "lavthavti_vikrala.txt", "audio": "aarti/2-lavthavti-vikrala.mp3", "catergory_id": 2},
-	{"id": 5, "title": "Durge Durghat", "text": "durge-durgahat.txt", "audio": "aarti/3-durge-durgahat.mp3", "catergory_id": 0}
+	{"id": 2, "title": "Durge Durghat", "text": "durge-durgahat.txt", "audio": "aarti/3-durge-durgahat.mp3", "catergory_id": 0},
+	{"id": 3, "title": "Yuge Athhavis", "text": "yuge-athhavis.txt", "audio": "aarti/4-yuge-athhavis.mp3", "catergory_id": 0},
+	{"id": 4, "title": "Trighunatmak Trimurti", "text": "trighunatmak-trimurti.txt", "audio": "aarti/5-trighunatmak-trimurti.mp3", "catergory_id": 0},
+	{"id": 5, "title": "Nana Parimal", "text": "nana-marimal.txt", "audio": "aarti/6-nana-marimal.mp3", "catergory_id": 0},
+	{"id": 6, "title": "Shendurlal Chadhao", "text": "shendurlal-chadhao.txt", "audio": "aarti/7-shendurlal-chadhao.mp3", "catergory_id": 0},
+	{"id": 7, "title": "Yei Ho Vithhale", "text": "yeio-vithhale.txt", "audio": "aarti/8-yeio-vithhale.mp3", "catergory_id": 0},
+	{"id": 8, "title": "Tu Sukhatarta", "text": "tu-shukhatarta.txt", "audio": "aarti/9-tu-shukhatarta.mp3", "catergory_id": 0},
+	{"id": 9, "title": "Aarti Dyanaraja", "text": "aarti-dyanaraja.txt", "audio": "aarti/10-aarti-dyanaraja.mp3", "catergory_id": 0},
+	{"id": 10, "title": "Aarti Saibaba", "text": "aarti-saibaba.txt", "audio": "", "catergory_id": 0},
+	{"id": 11, "title": "Aarti Saprem (Vitthal)", "text": "aarti-saprem.txt", "audio": "", "catergory_id": 0},
+	{"id": 12, "title": "Om Jaya Jagadhish", "text": "om-jaya-jagadhish.txt", "audio": "aarti/13-om-jaya-jagadhish.mp3", "catergory_id": 0},
+	{"id": 13, "title": "Aata Swami Sukhe Nidra", "text": "aata-swami-sukhe-nidra.txt", "audio": "aarti/14-aata-swami-sukhe-nidra.mp3", "catergory_id": 0},
+	{"id": 14, "title": "Dhanya Dhanya Ho", "text": "dhanya-dhanya-ho.txt", "audio": "aarti/15-dhanya-dhanya-ho.mp3", "catergory_id": 0},
+	{"id": 15, "title": "Rijo Rijo", "text": "rijo-rijo.txt", "audio": "aarti/16-rijo-rijo.mp3", "catergory_id": 0},
+	{"id": 16, "title": "Mujhe Sache Dilse", "text": "mujhe-sache-dilse.txt", "audio": "aarti/17-mujhe-sache-dilse.mp3", "catergory_id": 0},
+	{"id": 17, "title": "Jai Jai Dindayala (Satyanarayan)", "text": "jai-jai-din-dayala.txt", "audio": "", "catergory_id": 0},
+	{"id": 18, "title": "Kabhi Ram Banke", "text": "kabhi-ram-banke.txt", "audio": "aarti/19-kabhi-ram-banke.mp3", "catergory_id": 0},
+	{"id": 19, "title": "Rama Rama", "text": "rama-rama-rama.txt", "audio": "aarti/20-rama-rama-rama.mp3", "catergory_id": 0},
+	{"id": 20, "title": "Ganaraya Aarti Hi Tujala", "text": "ganaraya-aarti-hi-tujala.txt", "audio": "aarti/21-ganaraya-aarti-hi-tujala.mp3", "catergory_id": 0},
+	{"id": 21, "title": "Shree Swami Samartha", "text": "shree-swami-samartha.txt", "audio": "aarti/22-shree-swami-samartha.mp3", "catergory_id": 0},
+	{"id": 22, "title": "Tuch Sukhakarta", "text": "tuch-sukhakarta.txt", "audio": "aarti/23-tuch-sukhakarta.mp3", "catergory_id": 0},
+	{"id": 23, "title": "Tula Khandyavar Gein (Sai Baba)", "text": "tula-khandyavar.txt", "audio": "", "catergory_id": 0},
+	{"id": 24, "title": "Vithal Vithal Vithala", "text": "vithal-vithal-vithala.txt", "audio": "aarti/25-vithal-vithal-vithala.mp3", "catergory_id": 0},
+	{"id": 25, "title": "Hari Chala Mandira", "text": "hari-chala-mandira.txt", "audio": "aarti/26-hari-chala-mandira.mp3", "catergory_id": 0},
+	{"id": 26, "title": "Aarti Ramji Tumhari", "text": "aarti-ramji-tumhari.txt", "audio": "aarti/27-aarti-ramji-tumhari.mp3", "catergory_id": 0},
+	{"id": 27, "title": "Dhupadipa Jhala Aata", "text": "dhupadipa-jhala-aata.txt", "audio": "aarti/28-dhupadipa-jhala-aata.mp3", "catergory_id": 0},
+	{"id": 28, "title": "Shevat Goad Kari", "text": "shevat-god-kari.txt", "audio": "aarti/29-shevat-god-kari.mp3", "catergory_id": 0},
+	{"id": 29, "title": "Ghalin Lotangan", "text": "ghalin-lotangan.txt", "audio": "aarti/30-ghalin-lotangan.mp3", "catergory_id": 0},
+	{"id": 101, "title": "Ashthavinayak", "text": "ashthavinayak.txt", "audio": "gajar/1-ashthavinayak.mp3", "catergory_id": 1},
+	{"id": 201, "title": "Moraya Moraya", "text": "sukhakarta.txt", "audio": "aarti/1-sukhakarta-dukhaharta.mp3", "catergory_id": 2},
+	{"id": 201, "title": "Devadi deva", "text": "lavthavti_vikrala.txt", "audio": "aarti/2-lavthavti-vikrala.mp3", "catergory_id": 2},
+
+
+
 ];
 
 
