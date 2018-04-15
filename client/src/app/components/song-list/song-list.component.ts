@@ -12,9 +12,9 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./song-list.component.css']
 })
 export class SongListComponent implements OnInit {
-   private selectedId: number;
-   private songList: [MenuItem];
-   private pageTitle: string;
+   selectedId: number;
+   songList: [MenuItem];
+   pageTitle: string;
    @Output() activate: EventEmitter<any> = new EventEmitter();
 
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }

@@ -50,7 +50,7 @@ export class PlayerComponent implements OnInit {
         //this.dataService.setPageTitle(this.song.title);
         //this.open.emit(this.song.title);
         this.pageTitle = this.song.title;
-        this.audio = "http://localhost:5000/bappamusic/"+this.song.audio;
+        this.audio = "http://adityamhamunkar.com/bappamusic/"+this.song.audio;
         this.activate.emit(this.song.title);
 
 

@@ -36,8 +36,8 @@ export class DataService {
   getSong(id){
     let headers = new Headers();
     let options = new RequestOptions({headers:headers});
-    return this.http.get( 'http://localhost:5000/api/song/'+id, options)
-    //return this.http.get( 'https://bappamusic.herokuapp.com/api/song/'+id, options)
+    //return this.http.get( 'http://localhost:5000/api/song/'+id, options)
+    return this.http.get( 'https://bappamusic.herokuapp.com/api/song/'+id, options)
     .map(res => res.json());
   }
 
@@ -49,7 +49,7 @@ export class DataService {
   getAudio(id){
     let headers = new Headers();
     let options = new RequestOptions({headers:headers});
-    return this.http.get( 'http://localhost:5000/api/aarti/'+id+'/audio', options);
+    return this.http.get( 'https://bappamusic.herokuapp.com/aarti/'+id+'/audio', options);
   }
 
 }

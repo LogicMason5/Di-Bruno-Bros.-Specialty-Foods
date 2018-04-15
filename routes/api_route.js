@@ -15,7 +15,8 @@ var aarti_list = [
 	{"id": 1, "title": "Lavthavti Vikrala", "text": "lavthavti_vikrala.txt", "audio": "aarti/2-lavthavti-vikrala.mp3", "catergory_id": 0},
 	{"id": 2, "title": "Ashthavinayak", "text": "ashthavinayak.txt", "audio": "gajar/1-ashthavinayak.mp3", "catergory_id": 1},
 	{"id": 3, "title": "Moraya Moraya", "text": "sukhakarta.txt", "audio": "aarti/1-sukhakarta-dukhaharta.mp3", "catergory_id": 2},
-	{"id": 4, "title": "Devadi deva", "text": "lavthavti_vikrala.txt", "audio": "aarti/2-lavthavti-vikrala.mp3", "catergory_id": 2}
+	{"id": 4, "title": "Devadi deva", "text": "lavthavti_vikrala.txt", "audio": "aarti/2-lavthavti-vikrala.mp3", "catergory_id": 2},
+	{"id": 5, "title": "Durge Durghat", "text": "durge-durgahat.txt", "audio": "aarti/3-durge-durgahat.mp3", "catergory_id": 0}
 ];
 
 
