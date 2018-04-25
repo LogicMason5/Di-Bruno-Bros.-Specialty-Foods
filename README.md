@@ -7,4 +7,4 @@ A full stack web application with custom audio player
 - Express 
 - AngularJS
 - Heroku
-
+- MongoDB
